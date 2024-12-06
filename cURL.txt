@@ -1,0 +1,60 @@
+curl -X POST "http://127.0.0.1:8000/heartbeat/" \
+-H "Content-Type: application/json" \
+-d '{
+    "data": {
+        "type": "telematics_heartbeat",
+        "id": "920144768000507",
+        "attributes": {
+            "event": "periodic_update",
+            "logged_at": "2021-01-03T23:32:27.000Z",
+            "heartbeat_id": "920144768000507",
+            "speed": 24.5,
+            "odometer": 328310.93,
+            "rpm": 600,
+            "engine_hours": 10399.35,
+            "wheels_in_motion": true,
+            "gps": {
+                "distance_diff": 4.86,
+                "total_distance": 518.53
+            },
+            "location": {
+                "latitude": 32.875,
+                "longitude": -117.206869,
+                "description": "4 mi ENE of La Jolla, CA",
+                "country_code": "US",
+                "state_code": "CA",
+                "relative_position": {
+                    "distance": "4",
+                    "unit_of_measure": "mi",
+                    "direction": "ENE",
+                    "city": "La Jolla",
+                    "state_code": "CA",
+                    "country_code": "US"
+                }
+            },
+            "idle_periods": [
+                {
+                    "duration": "20.73",
+                    "latitude": 32.935,
+                    "longitude": -117.206879,
+                    "start_time": "2021-01-03T22:12:27.000Z"
+                }
+            ]
+        }
+    },
+    "meta": {
+        "message_id": "014bf7b0-f4f9-11e8-baee-cddefa7c4011",
+        "consumer_version": "1.1.0",
+        "origin_version": "beta-1.0.0",
+        "timestamp": "2021-01-03T23:32:27.000Z"
+    }
+}'
+
+
+
+
+
+/////////////////////
+
+
+curl -X GET "http://127.0.0.1:8000/heartbeat/"
